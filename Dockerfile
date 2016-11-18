@@ -1,7 +1,7 @@
-FROM arnaudpiroelle/base
+FROM alpine:3.4
 MAINTAINER Arnaud Piroelle "piroelle.arnaud@gmail.com"
 
-RUN apt-get update && apt-get install -y transmission-daemon
+RUN apk add --no-cache bash transmission-daemon
 
 COPY asset/settings.json /tmp/settings.json
 COPY entrypoint.sh 		 /opt/entrypoint.sh
